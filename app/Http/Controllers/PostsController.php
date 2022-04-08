@@ -43,16 +43,6 @@ class PostsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -73,12 +63,9 @@ class PostsController extends Controller
         $path = $request->file('image')->store('feed/'.$user, 's3');
         $input = $request->all();
 
-        // el request->image trae consigo la imagen que se subió desde el form en la vista
-        // mientras que request->url es nulo, por lo cual vamos a crear una url para acceder al archivo
-
         // la función basename() devuelve el nombre de archivo de una ruta
         $input['image'] =  basename($path);
-        // obtener el url del archivo
+        // crea una url del archivo
         // por ejemplo: http://minio:9000/resources/feed/3/nmOKm1K1DLvHMCxyLFd3YJY60uWekEnC63SpGz6e.jpg
         $input['url'] =  Storage::url($path);
 

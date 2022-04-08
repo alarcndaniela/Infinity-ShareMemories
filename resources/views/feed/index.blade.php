@@ -21,9 +21,11 @@
     <div class="gap-8 lg:columns-3 sm:columns-1 h-max">
         @forelse ($posts as $post)
             <div class="m-2 break-inside">
-                <div class="flex h-full flex-col" data-aos="slide-up" data-aos-duration="2000">
-                    <img src="{{$post->url}}" class="rounded-3xl object-cover h-full w-full shadow-lg">
-                    <div class="flex h-16 items-center">
+                <div class="flex h-max flex-col" data-aos="slide-up" data-aos-duration="2000">
+                    <a class="cursor-pointer transition duration-500 ease-in-out transform hover:scale-105" target="_blank" href="{{$post->url}}">
+                        <img src="{{$post->url}}" class="rounded-3xl object-cover h-full w-full shadow-lg">
+                    </a>
+                    <div class="flex h-20 items-center">
                         <div class="relative flex justify-center items-center">
                             <div style="width: 1.9rem; height:1.9rem" class="relative z-10 flex justify-center items-center rounded-full overflow-hidden bg-gradient-to-r mx-auto from-cian to-fucsia"></div>
                             <div id="profile-photo-form" class="w-7 h-7 absolute z-10 flex justify-center items-center rounded-full overflow-hidden border-2 border-dark-gray mx-auto">

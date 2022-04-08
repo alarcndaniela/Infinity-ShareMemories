@@ -21,7 +21,8 @@
                 <div id="profile-photo-form" class="w-48 h-48 absolute z-10 flex justify-center items-center rounded-full overflow-hidden border-8 border-dark-gray mx-auto">
                     <div class="min-h-full min-w-full flex justify-center overflow-hidden items-center rounded-full ease-in-out">
                         <img src="{{ Auth::user()->image ?? asset('img/img.png') }}" class="h-96 w-96 scale-100 object-cover" >
-                        <input id="profile_image" name="profile_image" class="cursor-pointer absolute w-full h-full left-0 top-0 opacity-0 z-20" type="file"/>
+                        <input id="profile_image" name="profile_image" class="cursor-pointer absolute w-full h-full left-0 top-0 opacity-0 z-20"
+                        title="@if(Auth::user()->image) Change your avatar @else Upload an avatar @endif" type="file"/>
                     </div>
                 </div>
             </div>

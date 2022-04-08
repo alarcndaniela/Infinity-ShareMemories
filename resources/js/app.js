@@ -1,17 +1,11 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
+// Animation library initialization
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import 'aos/dist/aos.css';
 AOS.init();
 
-
+// Submit avatar form on change
 document.getElementById("profile_image").onchange = function() {
     document.getElementById("form").submit();
 };
@@ -19,21 +13,7 @@ document.getElementById("file").onchange = function() {
     document.getElementById("feed-form").submit();
 };
 
-
-const file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-  // Get the selected file
-  const [file] = e.target.files;
-  // Get the file name and size
-  const { name: fileName, size } = file;
-  // Convert size in bytes to kilo bytes
-  const fileSize = (size / 1000).toFixed(2);
-  // Set the text content
-  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
-  document.querySelector('.file-name').textContent = fileNameAndSize;
-});
-
-
+// Copy button functionality
 let inputCopyGroups = document.querySelectorAll('.input-group-copy');
 
 for (let i = 0; i < inputCopyGroups.length; i++) {
@@ -47,5 +27,11 @@ for (let i = 0; i < inputCopyGroups.length; i++) {
   btn.addEventListener('click', function(e) {
     let input = this.parentNode.parentNode.getElementsByClassName('form-control')[0];
     input.select();
+    try {
+        var success = document.execCommand('copy');
+        console.log('Copying ' + (success ? 'Succeeded' : 'Failed'));
+    } catch (err) {
+        console.log('Copying failed', err);
+    }
   });
 }

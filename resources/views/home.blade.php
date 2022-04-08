@@ -18,13 +18,12 @@
             </x-nav-link>
         </div>
         <div class="w-full mb-4 absolute flex mx-auto justify-between items-center">
-            {{-- <p class="text-light-gray text-xl">{{ Auth::user()->code }}</p> --}}
             <div class="form-group mx-4 shadow-inner text-light-gray">
                 <div class="input-group input-group-copy flex items-center justify-between">
                     <span class="input-group-btn">
                         <button class="btn btn-default"><i class="fa fa-clone mr-4"></i></button>
                     </span>
-                    <input id="test2" type="text"  class="form-control text-lg bg-black w-16" value="{{ Auth::user()->code }}"/>
+                    <input id="test2" type="text"  class="form-control text-lg bg-black w-16" onCut="return false" value="{{ Auth::user()->code }}"/>
                 </div>
             </div>
             <div class="p-8" aria-labelledby="navbarDropdown">
