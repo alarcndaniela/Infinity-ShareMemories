@@ -1,0 +1,1 @@
+<img src="{{ asset('img/kudos.'.(App\Models\Configuration::first()->image_type ?? 'png')) }}" alt="{{App\Models\Configuration::first()->image_name ?? ''}}" class="max-w-sm max-h-48">
