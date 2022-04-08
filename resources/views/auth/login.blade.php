@@ -12,11 +12,11 @@
         @csrf
         <x-icon-input class="mx-2 lg:mx-12" value="{{ old('username') }}" name="username" id="username" type="username" :icon="'fa fa-user text-gray-300 left-5 top-8 lg:top-11 absolute'"
             placeholder="{{ __('Username')}}"/>
-        <div class="text-red-500 text-xs d-flex text-center">
+        <div class="text-red-400 text-base mt-2 d-flex text-center">
             {{ $errors->first('username') }}
         </div>
         <x-icon-input class="mx-2 lg:mx-12" name="password" id="password" type="password" :icon="'fa fa-key fa-lg text-gray-300 left-5 top-8 lg:top-11 absolute'" placeholder="{{ __('Password')}}"/>
-        <div class="text-red-500 text-xs d-flex text-center">
+        <div class="text-red- text-base d-flex text-center">
             {{ $errors->first('password') }}
         </div>
         <div class="mt-4">
